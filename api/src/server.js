@@ -1,8 +1,10 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import cookieParser from "cookie-parser";
 import { connectDB } from "./config/db.js";
+
+import authRoutes from "./routes/auth.route.js";
+
 dotenv.config();
 const app = express();
 
@@ -20,9 +22,9 @@ connectDB();
 
 // Middlewares
 app.use(express.json());
-app.use(cookieParser());
 
 //Routes
+app.use("/api/auth", authRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 8000;
