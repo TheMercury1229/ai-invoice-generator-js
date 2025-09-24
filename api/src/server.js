@@ -4,7 +4,8 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 
 import authRoutes from "./routes/auth.route.js";
-
+import invoiceRoutes from "./routes/invoice.route.js";
+import aiRouter from "./routes/ai.route.js";
 dotenv.config();
 const app = express();
 
@@ -25,6 +26,8 @@ app.use(express.json());
 
 //Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/invoices", invoiceRoutes);
+app.use("/api/ai", aiRouter);
 
 // Start Server
 const PORT = process.env.PORT || 8000;
