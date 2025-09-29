@@ -15,9 +15,11 @@ import DashboardPage from "./pages/Dashboard/DashboardPage";
 import InvoiceDetailPage from "./pages/Invoices/InvoiceDetailPage";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
+// Context Import
+import { AuthProvider } from "./context/AuthContext";
 export default function App() {
   return (
-    <div>
+    <AuthProvider>
       <Router>
         <Routes>
           {/* Public Routes */}
@@ -45,6 +47,6 @@ export default function App() {
           },
         }}
       />
-    </div>
+    </AuthProvider>
   );
 }
