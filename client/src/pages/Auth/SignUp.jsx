@@ -166,7 +166,7 @@ export default function SignUp() {
         password: formData.password,
       });
       const data = response.data;
-      const { token, user } = data;
+      const { token } = data;
       if (response.status === 201) {
         setSuccess("Account Created Successfully");
 
@@ -182,7 +182,7 @@ export default function SignUp() {
           password: false,
           confirmPassword: false,
         });
-        login(user, token);
+        login(data, token);
         setTimeout(() => {
           navigate("/dashboard");
         }, 2000);

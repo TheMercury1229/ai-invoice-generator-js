@@ -1,5 +1,14 @@
-import { BarChart2, File, FileText, Mail, Sparkles } from "lucide-react";
-
+import {
+  BarChart2,
+  File,
+  FileText,
+  LayoutDashboard,
+  Mail,
+  Plus,
+  Sparkles,
+  Users,
+} from "lucide-react";
+// Landing page data
 export const FEATURES = [
   {
     icon: Sparkles,
@@ -81,5 +90,29 @@ export const FAQ = [
     question: "How can I sign up with this app?",
     answer:
       "You can sign up by clicking on the 'Sign Up' button in the landing page. Then, fill in the required information and click 'Sign Up'.",
+  },
+];
+
+// Sidebar navigation items
+export const NAVIGATION_MENU = [
+  {
+    id: "dashboard",
+    name: "Dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    id: "invoices",
+    name: "Invoices",
+    icon: FileText,
+  },
+  {
+    id: "invoices/new",
+    name: "Create Invoice",
+    icon: Plus,
+  },
+  {
+    id: "profile",
+    name: "Profile",
+    icon: Users,
   },
 ];

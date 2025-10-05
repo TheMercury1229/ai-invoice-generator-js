@@ -26,7 +26,8 @@ export const ProfileDropdown = ({
         ) : (
           <div className="size-9 bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl flex items-center justify-center">
             <span className="text-white font-semibold text-sm">
-              {companyName.charAt(0).toUpperCase()}
+              {companyName.charAt(0).toUpperCase() ||
+                email.charAt(0).toUpperCase()}
             </span>
           </div>
         )}

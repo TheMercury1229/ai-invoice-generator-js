@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
 import DashboardLayout from "../layouts/DashboardLayout";
+import { useAuth } from "../../context/AuthContext";
 export function ProtectedRoute({ children }) {
-  const isAuthenticated = true;
-  const loading = false;
+  const { isAuthenticated, loading } = useAuth();
 
   //  If loading
   if (loading) {
