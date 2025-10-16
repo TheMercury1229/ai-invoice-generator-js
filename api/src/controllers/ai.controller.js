@@ -34,7 +34,7 @@ export const parseInvoiceFromText = async (req, res) => {
         Extract the data and provide only the JSON object as output.
     `;
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.0-flash",
       contents: PROMPT,
     });
     const responseText = response.text;
@@ -88,7 +88,7 @@ export const generateReminderEmail = async (req, res) => {
       `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.0-flash",
       contents: PROMPT,
     });
     return res.status(200).json({ reminderText: response.text });
@@ -153,7 +153,7 @@ export const getDashboardSummary = async (req, res) => {
     `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.0-flash",
       contents: PROMPT,
     });
     const responseText = response.text;
